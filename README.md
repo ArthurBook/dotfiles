@@ -26,6 +26,7 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 :PackerInstall
 ```
 
+## Finally, compile YCM
 ```bash
 ~/.local/share/nvim/site/pack/packer/start/YouCompleteMe/install.py --verbose
 ```
