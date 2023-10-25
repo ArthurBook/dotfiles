@@ -32,12 +32,20 @@ Plug 'psf/black'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
+
 Plug 'dense-analysis/ale'
+let g:ale_linters = {'python': ['flake8', 'pylint', 'mypy']} " linters
+let g:ale_fixers = {'python': ['autopep8', 'yapf', 'black']} " lint fixers
+map <C-l> :ALEFix
+
 Plug 'tpope/vim-fugitive'
 Plug 'puremourning/vimspector'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+" Mods
+autocmd BufWritePre *.py execute ':Black'
+map <C-n> :NERDTreeToggle<CR>
 
 " Initialize plugin system
 call plug#end()
