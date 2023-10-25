@@ -1,2 +1,2 @@
 update_config:
-	cp init.vim ~/.config/nvim/
+	cp init.lua ~/.config/nvim/

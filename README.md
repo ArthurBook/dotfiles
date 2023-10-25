@@ -3,8 +3,13 @@ load plug-vim:
 ```bash
 brew install neovim
 brew install cmake
+brew install node 
 
+## Linting and such
 pip install black flake8 pylint mypy
+
+## Syntax highlighting
+npm install -g pyright
 
 mkdir -p ~/.config/nvim
 
