@@ -69,15 +69,14 @@ vim.cmd [[
 ]]
 
 function SetupPythonEnv()
-  local pyenv_path = vim.fn.system('pyenv which python'):gsub('%s+$', '')
   local poetry_path = vim.fn.system('poetry env info -p'):gsub('%s+$', '')
-  
-  -- Use pyenv for python3_host_prog
-  vim.g.python3_host_prog = pyenv_path
-  
-  -- Check if poetry exists, otherwise fallback to pyenv or system python
   if vim.fn.empty(poetry_path) == 1 then
-    vim.g.ycm_python_binary_path = vim.fn.system('pyenv which python'):gsub('%s+$', '')
+    local pyenv_path = vim.fn.system('pyenv which python'):gsub('%s+$', '')
+    if vim.fn.empty(pyenv_path) == 1 then
+      vim.api.nvim_out_write("Warning: No local Python environment found. Falling back to system Python.\n")
+    else
+      vim.g.ycm_python_binary_path = pyenv_path
+    end
   else
     vim.g.ycm_python_binary_path = poetry_path
   end

@@ -19,11 +19,13 @@ make update_config
 ## Install plug
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
-## Run plug install
-nvim -c 'PackerInstall' -c 'qa'
+## Then, run vimscript: (in nvim and press : and type
+```vimscript
+:PackerInstall
 ```
 
 ```bash
-~/.config/nvim/plugged/YouCompleteMe/install.py --verbose
+~/.local/share/nvim/site/pack/packer/start/YouCompleteMe/install.py --verbose
 ```
