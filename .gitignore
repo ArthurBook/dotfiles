@@ -1,0 +1,16 @@
+# Vim swap files
+*.swp
+*.swo
+
+# Backup files created by Vim
+*.bak
+
+# Temporary files
+*.tmp
+
+# Session files
+Session.vim
+
+# Netrw directory listing
+.netrwhist
+
