@@ -1,3 +1,6 @@
+-- Constants
+local IS_EMPTY = 1
+
 -- Bootstrap
 local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -6,23 +9,21 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 -- Global Settings
-vim.opt.number = true
-vim.cmd 'syntax enable'
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
 vim.o.clipboard = "unnamedplus"
+vim.wo.number = true
 
 -- Plugin Management
 require('packer').startup(function()
-  use 'davidhalter/jedi-vim'
+  use 'petobens/poet-v'
   use 'psf/black'
+  use 'fisadev/vim-isort'
+  use 'tpope/vim-commentary'
+  use 'scrooloose/nerdtree'
+  use 'davidhalter/jedi-vim'
   use 'ycm-core/YouCompleteMe'
   use 'sheerun/vim-polyglot'
-  use 'scrooloose/nerdtree'
   use 'dense-analysis/ale'
   use 'neovim/nvim-lspconfig'
-  use 'tpope/vim-fugitive'
   use 'puremourning/vimspector'
   use 'vim-airline/vim-airline'
   use {
@@ -56,30 +57,38 @@ vim.cmd [[
   nnoremap <silent> <C-S-n> :NERDTreeToggle<CR>
 ]]
 
+
 -- Language-Specific Settings
 vim.cmd [[
   augroup MyPythonSettings
     autocmd!
-    autocmd BufNewFile,BufRead *.py lua SetupPythonEnv()
-    autocmd BufNewFile,BufRead *.py lua SetupPythonVimSettings()
+    autocmd VimEnter PoetvActivate
     autocmd BufWritePre *.py execute ':Black'
     autocmd BufNewFile,BufRead *.py lua SetupALEForPython()
     autocmd BufNewFile,BufRead *.py lua SetupLSPForPython()
   augroup END
+  let g:vim_isort_map = '<C-i>'
+  let g:vimspector_enable_mappings = 'HUMAN'
 ]]
 
 function SetupPythonEnv()
-  local poetry_path = vim.fn.system('poetry env info -p'):gsub('%s+$', '')
-  if vim.fn.empty(poetry_path) == 1 then
-    local pyenv_path = vim.fn.system('pyenv which python'):gsub('%s+$', '')
-    if vim.fn.empty(pyenv_path) == 1 then
+  local POETRY_PATH = vim.fn.system('poetry env info -p'):gsub('%s+$', '')
+  if vim.fn.empty(POETRY_PATH) == IS_EMPTY then
+    local PYENV_PATH = vim.fn.system('pyenv which python'):gsub('%s+$', '')
+    if vim.fn.empty(PYENV_PATH) == IS_EMPTY then
       vim.api.nvim_out_write("Warning: No local Python environment found. Falling back to system Python.\n")
     else
-      vim.g.ycm_python_binary_path = pyenv_path
+      vim.g.ycm_python_binary_path = PYENV_PATH
     end
   else
-    vim.g.ycm_python_binary_path = poetry_path
+    vim.g.ycm_python_binary_path = POETRY_PATH
   end
+end
+
+function SetupALEForPython()
+  vim.g.ale_linters = {python = {'flake8', 'pylint', 'mypy'}}
+  vim.g.ale_fixers = {python = {'autopep8', 'yapf', 'black'}}
+  vim.g.ale_enabled = 1
 end
 
 function SetupLSPForPython()
@@ -87,12 +96,6 @@ function SetupLSPForPython()
   lspconfig.pyright.setup({
     cmd = { "pyright-langserver", "--stdio" },
   })
-end
-
-function SetupALEForPython()
-  vim.g.ale_linters = {python = {'flake8', 'pylint', 'mypy'}}
-  vim.g.ale_fixers = {python = {'autopep8', 'yapf', 'black'}}
-  vim.g.ale_enabled = 1
 end
 
 function SetupPythonVimSettings()

@@ -6,7 +6,7 @@ brew install cmake
 brew install node 
 
 ## Linting and such
-pip install black flake8 pylint mypy
+pip install pynvim, black flake8 pylint mypy, isort
 
 ## Syntax highlighting
 npm install -g pyright
