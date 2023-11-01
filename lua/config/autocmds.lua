@@ -14,16 +14,3 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	end,
 	once = true,
 })
-
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		require("lspconfig").pylsp.setup({
-			filetypes = { "python" },
-			settings = {
-				pylsp = require("lspconfig").pylsp, -- required to enable pylsp
-				configurationSources = { "black", "pylint", "mypy" },
-				formatCommand = { "black" },
-			},
-		})
-	end,
-})

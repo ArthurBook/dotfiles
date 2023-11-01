@@ -32,14 +32,19 @@ return {
 		end,
 	},
 
-	-- debugger
+	-- linting server
 	{
-		"nvim-pack/nvim-spectre",
-		cmd = "Spectre",
-		opts = { open_cmd = "noswapfile vnew" },
-    -- stylua: ignore
-    keys = {
-      { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
-    },
+		"nvimtools/none-ls.nvim",
+		opts = function(_, opts)
+			local nls = require("null-ls")
+			opts.root_dir = opts.root_dir
+				or require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git")
+			opts.sources = vim.list_extend(opts.sources or {}, {
+				nls.builtins.formatting.black,
+				nls.builtins.formatting.isort,
+				nls.builtins.diagnostics.pylint,
+				nls.builtins.diagnostics.mypy,
+			})
+		end,
 	},
 }
