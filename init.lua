@@ -296,8 +296,16 @@ require("lazy").setup({
 -- NOTE: You can change these options as you wish!
 
 -- Set colorscheme
-vim.cmd([[colorscheme tokyonight]])
-
+if not vim.g.vscode then
+	vim.cmd([[colorscheme tokyonight]])
+else
+	return { {
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "",
+		},
+	} }
+end
 -- Set highlight on search
 vim.o.hlsearch = false
 
