@@ -1,10 +1,4 @@
-tt.*
-.tests
-doc/tags
-debug
-.repro
-foo.*
-*.log
-data
 .DS_Store
-testing/*
+
+# nvim
+nvim/test
