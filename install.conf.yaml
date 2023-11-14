@@ -2,14 +2,24 @@
     link:
       relink: true
 
-- clean: ['~']
+- clean: 
+    ['~', '~/.config']
+
+- brewfile:
+    - brew/Brewfile
 
 - link:
     ~/.config/nvim: 
         path: nvim
+        glob: true
         exclude: [ nvim/test ]
     ~/.gitconfig:
         path: gitconfig/.gitconfig
+
+- create:
+    ~/.ssh:
+      mode: 0700
+    ~/projects:
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
