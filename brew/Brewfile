@@ -2,28 +2,33 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
+#
+# fonts 
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
+
+# neovim
+brew "bob" 
 
 # python 
 brew "pyenv"
 brew "poetry"
 
-# neovim
-brew "bob" 
-
-# fonts 
-cask "font-hack-nerd-font"
-cask "font-jetbrains-mono-nerd-font"
+# terminal
+cask "iterm2"
+brew "zsh"
+brew "tmux"
+brew "fd"
+brew "git"
+brew "curl"
+brew "cmake"
 
 # desktop apps
 cask "rectangle"
-cask "iterm2"
 cask "slack"
 cask "visual-studio-code"
 cask "zoom"
 cask "scroll-reverser"
 
 # others
-brew "cmake"
-brew "fd"
 brew "node"
-
