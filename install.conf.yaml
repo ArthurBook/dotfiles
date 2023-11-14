@@ -5,7 +5,7 @@
 - clean: ['~']
 
 - link:
-    ~/.nvim: .config/nvim
+    ~/.config/nvim: nvim
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
