@@ -1,4 +1,8 @@
+# os 
 .DS_Store
 
 # nvim
 nvim/test
+
+# brew
+brew/Brewfile.lock.json
