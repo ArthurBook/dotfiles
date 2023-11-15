@@ -1,38 +1,37 @@
 - defaults:
     link:
-        relink: true
+      glob: true
+      create: true
+      relink: true
+      force: true
 
 - create:
     ~/.ssh:
-        mode: 0700
+      mode: 0700
     ~/projects:
-        mode: 0700
+      mode: 0700
 
-- clean: 
-    ['~', '~/.config']
+- clean: ["~", "~/.config"]
 
 - brewfile:
     - brew/Brewfile
 
 - link:
-    ~/.config/:
-        path: config/**
-        glob: true
-        create: true
-        relink: true
     ~/:
-        path: home/*
-        prefix: '.'
-        glob: true
-        create: true
-        relink: true
+      path: home/*
+      prefix: "."
+    ~/.config/:
+      path: config/**
 
 - shell:
     # git submodules
     - [git submodule update --init --recursive, Installing submodules]
 
     # python
-    - [pyenv install 3.7 3.9 3.11 --skip-existing, installing pyenv versions with pyenv]
+    - [
+        pyenv install 3.7 3.9 3.11 --skip-existing,
+        installing pyenv versions with pyenv,
+      ]
     - [pyenv global 3.11, setting python version to 3.11]
 
     # neovim

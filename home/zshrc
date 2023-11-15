@@ -11,4 +11,3 @@ source ~/.config/ohmyzsh/ohmyzsh.zsh
 source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.config/p10k/p10k.zsh
 
-
