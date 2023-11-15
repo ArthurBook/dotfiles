@@ -48,12 +48,13 @@
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+    os_icon                   # your OS logo (apple for macOS, swirl for debian, etc.)
+    prompt_char               # prompt symbol
     context                   # user@host
     dir                       # current directory
     vcs                       # git status
-    command_execution_time    # previous command duration
+    pyenv                     # python environment (https://github.com/pyenv/pyenv)
     virtualenv                # python virtual environment
-    prompt_char               # prompt symbol
   )
 
   # Right prompt segments.
@@ -61,6 +62,8 @@
     # command_execution_time  # previous command duration
     # virtualenv              # python virtual environment
     # context                 # user@host
+    status                    # exit code of the last command
+    command_execution_time    # previous command duration
     time                      # current time
   )
 
@@ -173,7 +176,7 @@
   #   - verbose: Enable instant prompt and print a warning when detecting console output during
   #              zsh initialization. Choose this if you've never tried instant prompt, haven't
   #              seen the warning, or if you are unsure what this all means.
-  typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
+  typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
   # Hot reload allows you to change POWERLEVEL9K options after Powerlevel10k has been initialized.
   # For example, you can type POWERLEVEL9K_BACKGROUND=red and see your prompt turn red. Hot reload
