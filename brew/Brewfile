@@ -23,6 +23,7 @@ brew "git"
 brew "curl"
 brew "cmake"
 brew "powerlevel10k"
+brew "neofetch"
 
 # desktop apps
 cask "rectangle"
