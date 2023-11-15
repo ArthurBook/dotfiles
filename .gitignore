@@ -5,4 +5,4 @@
 nvim/test
 
 # brew
-brew/Brewfile.lock.json
+**Brewfile.lock.json
