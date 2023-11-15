@@ -1,7 +1,8 @@
 ## aliases
-source ~/.config/zsh/zsh_env
-source ~/.config/zsh/zsh_aliases
-source ~/.config/zsh/zsh_functions
+source ~/.config/zsh/env.zsh
+source ~/.config/zsh/aliases.zsh
+source ~/.config/zsh/functions.zsh
+source ~/.config/zsh/settings.zsh
 
 # ohmyzsh
 source ~/.config/ohmyzsh/ohmyzsh.zsh
