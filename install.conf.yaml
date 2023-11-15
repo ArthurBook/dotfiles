@@ -1,6 +1,12 @@
 - defaults:
     link:
-      relink: true
+        relink: true
+
+- create:
+    ~/.ssh:
+        mode: 0700
+    ~/projects:
+        mode: 0700
 
 - clean: 
     ['~', '~/.config']
@@ -8,20 +14,18 @@
 - brewfile:
     - brew/Brewfile
 
-- create:
-    ~/.ssh:
-      mode: 0700
-    ~/projects:
-
 - link:
-    ~/.config/nvim: 
-        path: nvim
-    ~/.gitconfig:
-        path: gitconfig/.gitconfig
+    ~/.config/:
+        path: config/**
+        glob: true
+        create: true
+        relink: true
     ~/:
-      glob: true
-      path: zsh/*
-      prefix: '.'
+        path: home/*
+        prefix: '.'
+        glob: true
+        create: true
+        relink: true
 
 - shell:
     # git submodules

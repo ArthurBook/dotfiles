@@ -1,0 +1,13 @@
+## aliases
+source ~/.config/zsh/zsh_env
+source ~/.config/zsh/zsh_aliases
+source ~/.config/zsh/zsh_functions
+
+# ohmyzsh
+source ~.config/ohmyzsh/ohmyzsh.zsh
+
+## p10k
+source $HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/p10k/p10k.zsh
+
+

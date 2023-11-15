@@ -1,5 +1,0 @@
-source .zsh_env
-source .ohmyzsh
-source .zsh_aliases
-source .zsh_functions
-
