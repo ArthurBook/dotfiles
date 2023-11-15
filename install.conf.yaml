@@ -16,10 +16,12 @@
 - link:
     ~/.config/nvim: 
         path: nvim
-        glob: true
-        exclude: [ nvim/test ]
     ~/.gitconfig:
         path: gitconfig/.gitconfig
+    ~/:
+      glob: true
+      path: zsh/*
+      prefix: '.'
 
 - shell:
     # git submodules
