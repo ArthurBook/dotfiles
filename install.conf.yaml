@@ -28,12 +28,9 @@
     - [git submodule update --init --recursive, Installing submodules]
 
     # python
-    - [
-        pyenv install 3.7 3.9 3.11 --skip-existing,
-        installing pyenv versions with pyenv,
-      ]
-    - [pyenv global 3.11, setting python version to 3.11]
+    - [pyenv install 3.7 3.9 3.11 --skip-existing, Installing python versions]
+    - [pyenv global 3.11, Setting python version]
 
     # neovim
-    - [bob install stable, installing neovim with bob]
-    - [bob use stable, setting neovim version to stable with bob]
+    - [bob install stable, Installing neovim]
+    - [bob use stable, Setting neovim version]
