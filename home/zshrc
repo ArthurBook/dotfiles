@@ -21,4 +21,4 @@ source ~/.config/ohmyzsh/ohmyzsh.zsh
 source ~/.config/p10k/p10k.zsh
 
 # show neofetch 
-neofetch
+# neofetch

@@ -31,8 +31,6 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 ###########################
 ########## TMUX ###########
 ########################### 
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOQUIT=true
 ZSH_TMUX_CONFIG=~/.config/tmux/tmux.conf
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -67,10 +65,10 @@ ZSH_TMUX_CONFIG=~/.config/tmux/tmux.conf
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# ZSH_CUSTOM=~/.config/ohmyzsh/custom/
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
