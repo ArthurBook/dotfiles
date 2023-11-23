@@ -16,3 +16,8 @@ function portforward() {
   fi
 }
 
+function viewpdf() {
+  local FILE="$1"
+
+  pandoc file.md | lynx -stdin
+}

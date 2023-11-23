@@ -2,7 +2,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
-#
+
 # fonts 
 cask "font-hack-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
