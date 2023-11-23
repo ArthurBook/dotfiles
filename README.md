@@ -1,4 +1,4 @@
-# install:
+# install to ~/projects/dotfiles/
 ```bash
 # install:
 mkdir -p ~/projects
