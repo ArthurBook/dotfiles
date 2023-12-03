@@ -13,6 +13,7 @@ brew "bob"
 # python 
 brew "pyenv"
 brew "poetry"
+brew "sphinx-doc"
 
 # terminal
 cask "iterm2"
