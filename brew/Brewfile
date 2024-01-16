@@ -17,6 +17,7 @@ brew "poetry"
 # terminal
 cask "iterm2"
 brew "zsh"
+cast "fig"
 brew "tmux"
 brew "fd"
 brew "git"
