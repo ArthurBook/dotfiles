@@ -19,6 +19,7 @@ brew "sphinx-doc"
 cask "iterm2"
 brew "zsh"
 brew "tmux"
+brew "htop"
 brew "fd"
 brew "git"
 brew "curl"
@@ -26,6 +27,7 @@ brew "wget"
 brew "cmake"
 brew "powerlevel10k"
 brew "neofetch"
+brew "flyway"
 
 # desktop apps
 cask "rectangle"
@@ -33,6 +35,7 @@ cask "slack"
 cask "visual-studio-code"
 cask "zoom"
 cask "scroll-reverser"
+cask "dbeaver-community"
 
 # others
 brew "node"
