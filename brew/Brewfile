@@ -28,6 +28,7 @@ brew "cmake"
 brew "powerlevel10k"
 brew "neofetch"
 brew "flyway"
+brew "gh"
 
 # desktop apps
 cask "rectangle"

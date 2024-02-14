@@ -28,9 +28,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # zstyle ':omz:update' mode auto      # update automatically without asking
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-###########################
-########## TMUX ###########
-########################### 
+# Tmus conifg
 ZSH_TMUX_CONFIG=~/.config/tmux/tmux.conf
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -52,7 +50,7 @@ ZSH_TMUX_CONFIG=~/.config/tmux/tmux.conf
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="%F{yellow}...%f"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -65,7 +63,7 @@ ZSH_TMUX_CONFIG=~/.config/tmux/tmux.conf
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=~/.config/ohmyzsh/custom/
@@ -76,20 +74,30 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   colorize
   emoji-clock
 
-  git-commit
-  gitfast
-  gitignore
+  common-aliases # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
+  kubectl # kubectl completion & aliases
+  poetry # poetry completion & aliases
+  
+  git # git aliases
+  git-commit # git commit aliases
+  gitignore # gi [TEMPLATENAME] >> .gitignore: Appending programming language settings to your projects .gitignore.
+  gh # autocomplete for GitHub CLI
 
-  magic-enter
-  poetry
-  poetry-env
+  copybuffer # ctrl-o copies the current command to the clipboard
+  copyfile # Then you can run the command copyfile <filename> to copy the file named filename.
+  copypath # copypath <file_or_directory>: copies the absolute path of the given file.
 
-  tmux
-  tmux-cssh
+  dotenv # automatically loads .env file in the current directory
+  history # history search
+  iterm2 # iTerm2 integration
+  kubectx # shows the current kubectl context in the prompt
+  magic-enter # enter shows git status or ls
+  poetry-env # automatically changes poetry environment when you cd into or out of the project directory
+
+  safe-paste # Preventing any code from actually running while pasting
 )
 
 source $ZSH/oh-my-zsh.sh
