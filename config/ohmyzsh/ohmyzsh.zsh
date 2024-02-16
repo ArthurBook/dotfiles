@@ -78,6 +78,7 @@ plugins=(
   emoji-clock
 
   common-aliases # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
+  zsh-autosuggestions # auto suggestion
   kubectl # kubectl completion & aliases
   poetry # poetry completion & aliases
   
@@ -101,3 +102,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # needs t0 be last
+

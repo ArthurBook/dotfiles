@@ -18,6 +18,14 @@ brew "sphinx-doc"
 # terminal
 cask "iterm2"
 brew "zsh"
+
+# pimp my terminal
+brew "neofetch"
+brew "powerlevel10k"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+cask "codewhisperer"
+
 brew "tmux"
 brew "htop"
 brew "fd"
@@ -25,8 +33,7 @@ brew "git"
 brew "curl"
 brew "wget"
 brew "cmake"
-brew "powerlevel10k"
-brew "neofetch"
+
 brew "flyway"
 brew "gh"
 

@@ -34,3 +34,4 @@
     # neovim
     - [bob install stable, Installing neovim]
     - [bob use stable, Setting neovim version]
+
