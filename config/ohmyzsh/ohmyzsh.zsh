@@ -78,7 +78,6 @@ plugins=(
   emoji-clock
 
   common-aliases # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
-  zsh-autosuggestions # auto suggestion
   kubectl # kubectl completion & aliases
   poetry # poetry completion & aliases
   

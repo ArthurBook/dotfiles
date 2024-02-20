@@ -2,7 +2,8 @@
 export PATH="/usr/local/bin:$PATH"
 
 # bob (nvim)
-export PATH="~/.local/share/bob/nvim-bin:$PATH" 
+# export PATH="~/.local/share/bob/nvim-bin:$PATH" 
+export PATH=$PATH:~/.local/share/bob/nvim-bin/
 
 # sphinx
 export PATH="/opt/homebrew/opt/sphinx-doc/bin:$PATH"

@@ -34,4 +34,5 @@
     # neovim
     - [bob install stable, Installing neovim]
     - [bob use stable, Setting neovim version]
+    - [mkdir -p $(brew --prefix)/etc/bash_completion.d; bob complete bash > $(brew --prefix)/etc/bash_completion.d/bob.bash-completion, Setting bob shell completion]
 
