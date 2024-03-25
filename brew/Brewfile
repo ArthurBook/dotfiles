@@ -34,8 +34,10 @@ brew "curl"
 brew "wget"
 brew "cmake"
 
+# version control
 brew "flyway"
 brew "gh"
+brew "git-gui"
 
 # desktop apps
 cask "rectangle"
