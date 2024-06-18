@@ -47,6 +47,7 @@ cask "zoom"
 cask "scroll-reverser"
 cask "dbeaver-community"
 cask "texstudio"
+cask "discord"
 
 # others
 brew "node"
