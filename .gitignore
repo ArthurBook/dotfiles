@@ -3,6 +3,8 @@
 
 # nvim
 nvim/test
+lazy-lock.json
 
 # brew
 **Brewfile.lock.json
+

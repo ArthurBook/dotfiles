@@ -13,9 +13,6 @@
 
 - clean: ["~", "~/.config"]
 
-- brewfile:
-    - brew/Brewfile
-
 - link:
     ~/:
       path: home/*
@@ -28,11 +25,10 @@
     - [git submodule update --init --recursive, Installing submodules]
 
     # python
-    - [pyenv install 3.7 3.9 3.11 --skip-existing, Installing python versions]
+    - [pyenv install 3.9 3.11 3.13 --skip-existing, Installing python versions]
     - [pyenv global 3.11, Setting python version]
 
     # neovim
     - [bob install stable, Installing neovim]
     - [bob use stable, Setting neovim version]
-    - [mkdir -p $(brew --prefix)/etc/bash_completion.d; bob complete bash > $(brew --prefix)/etc/bash_completion.d/bob.bash-completion, Setting bob shell completion]
 
