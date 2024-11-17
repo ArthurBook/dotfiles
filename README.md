@@ -1,6 +1,7 @@
+# My setup
+
+## Setup
+[Install chezmoi](https://www.chezmoi.io/install/) and run:
 ```bash
-# install to ~/projects/dotfiles/
-mkdir -p ~/projects
-git clone git@github.com:ArthurBook/dotfiles.git ~/projects/dotfiles
-~/projects/dotfiles/install
 ```
+
