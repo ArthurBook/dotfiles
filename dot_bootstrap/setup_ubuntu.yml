@@ -7,7 +7,8 @@
   
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+    remote_regular_user: "{{ ansible_user_id }}"
+    remote_root_user: "{{ ansible_env.SUDO_USER }}"
 
   tasks:
     - name: Update apt package index
@@ -34,5 +35,5 @@
     - name: Change shell to zsh
       become_user: root
       ansible.builtin.user:
-        name: "{{ remote_regular_user }}"
+        name: "{{ remote_root_user }}"
         shell: /usr/bin/zsh
