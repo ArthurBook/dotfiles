@@ -30,12 +30,16 @@
         - bob
         - docker-compose
 
+    - name: Get brew prefix
+      ansible.builtin.command: brew --prefix
+      register: brew_prefix
+
     - name: Change shell to zsh
       become: true
       become_user: root
       ansible.builtin.user:
         name: "{{ remote_regular_user }}"
-        shell: $(brew --prefix)/bin/zsh
+        shell: "{{ brew_prefix.stdout }}/bin/zsh"
 
     - name: Setup neovim with bob
       become: true
