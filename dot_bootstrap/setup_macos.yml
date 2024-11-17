@@ -1,0 +1,43 @@
+---
+- name: Machine setup
+  hosts: all
+  connection: local
+  gather_facts: true
+  
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    remote_regular_user: "{{ lookup('env', 'USER') }}"  # Auto-detect current user
+
+  tasks:
+    - name: Install homebrew casks
+      community.general.homebrew_cask:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - docker
+        - visual-studio-code 
+
+    - name: Install homebrew packages
+      community.general.homebrew:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - zsh
+        - git
+        - make
+        - rustup
+        - docker-compose
+
+    - name: Change shell to zsh
+      become: true
+      become_user: root
+      ansible.builtin.user:
+        name: "{{ remote_regular_user }}"
+        shell: $(brew --prefix)/bin/zsh
+
+    - name: Ensure fonts directory
+      ansible.builtin.file:
+        path: "~{{ remote_regular_user }}/.fonts"
+        state: directory
+        mode: "0755"
+        owner: "{{ remote_regular_user }}"

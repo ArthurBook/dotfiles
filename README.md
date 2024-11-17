@@ -18,6 +18,7 @@ chezmoi init --apply git@github.com:ArthurBook/dotfiles.git
 - zsh-syntax-highlighting
 - neovim / lazyvim
 - https://github.com/koekeishiya/yabai
+- export PATH=/opt/homebrew/bin/:$PATH
 
 Cookbooks:
 https://github.com/entelecheia/dotfiles
