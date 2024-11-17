@@ -4,6 +4,7 @@ COMPLETION_WAITING_DOTS="true"      # See https://github.com/ohmyzsh/ohmyzsh/wik
 ZSH_THEME="agnoster"                # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 HIST_STAMPS="yyyy-mm-dd"            # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps
 plugins=(                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#plugins
+  zsh-autosuggestions               # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
   common-aliases                    # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
   dotenv                            # automatically loads .env file in the current directory
   git                               # git aliases

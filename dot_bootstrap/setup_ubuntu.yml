@@ -31,7 +31,13 @@
         repo: https://github.com/ohmyzsh/ohmyzsh.git
         dest: "{{ lookup('env','HOME') }}/.oh-my-zsh"
         depth: 1
-    
+
+    - name: Install zsh autosuggestions
+      ansible.builtin.git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions
+        dest: "{{ lookup('env','HOME') }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+        depth: 1
+
     - name: Change shell to zsh
       become_user: root
       ansible.builtin.user:
