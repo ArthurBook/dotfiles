@@ -24,7 +24,12 @@
         - zsh
         - git
         - make
-        - rustc
+
+    - name: Install Oh My Zsh
+      ansible.builtin.git:
+        repo: https://github.com/ohmyzsh/ohmyzsh.git
+        dest: ~/.oh-my-zsh
+        depth: 1
     
     - name: Change shell to zsh
       become_user: root
