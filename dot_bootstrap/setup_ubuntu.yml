@@ -1,0 +1,33 @@
+---
+- name: Ubuntu machine setup
+  hosts: all
+  become: true
+  connection: local
+  gather_facts: true
+  
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    remote_regular_user: "{{ ansible_env.SUDO_USER or ansible_user_id }}"
+
+  tasks:
+    - name: Update apt package index
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install apt packages
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - docker.io
+        - zsh
+        - git
+        - make
+        - rustc
+    
+    - name: Change shell to zsh
+      become_user: root
+      ansible.builtin.user:
+        name: "{{ remote_regular_user }}"
+        shell: /usr/bin/zsh

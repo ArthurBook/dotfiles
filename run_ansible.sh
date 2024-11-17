@@ -38,7 +38,7 @@ setup_linux() {
 setup_ubuntu() {
     sudo apt-get update
     sudo apt-get install -y ansible
-    ansible-playbook ~/.bootstrap/setup_ubuntu.yml --ask-become-pass
+    ansible-playbook -i ~/.bootstrap/inventory.yml ~/.bootstrap/setup_ubuntu.yml --ask-become-pass
 }
 
 setup_os

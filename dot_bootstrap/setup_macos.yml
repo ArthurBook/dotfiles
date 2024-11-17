@@ -1,5 +1,5 @@
 ---
-- name: Machine setup
+- name: MacOS machine setup
   hosts: all
   connection: local
   gather_facts: true
@@ -25,7 +25,9 @@
         - zsh
         - git
         - make
+        - pyenv
         - rustup
+        - bob
         - docker-compose
 
     - name: Change shell to zsh
@@ -35,9 +37,9 @@
         name: "{{ remote_regular_user }}"
         shell: $(brew --prefix)/bin/zsh
 
-    - name: Ensure fonts directory
-      ansible.builtin.file:
-        path: "~{{ remote_regular_user }}/.fonts"
-        state: directory
-        mode: "0755"
-        owner: "{{ remote_regular_user }}"
+    - name: Setup neovim with bob
+      become: true
+      become_user: root
+      ansible.builtin.shell: |
+        bob install stable
+        bob use stable 
