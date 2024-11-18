@@ -22,8 +22,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export EDITOR=nvim                  # See: https://www.chezmoi.io/reference/configuration-file/editor/
 
-# Paths 
-export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/.cargo/bin
-export PATH="$HOME/.scripts/bin:$PATH"
+# Source
+source ~/.config/zsh_path
+source ~/.config/zsh_alias

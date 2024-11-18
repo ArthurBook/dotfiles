@@ -11,10 +11,3 @@
 chezmoi init --apply git@github.com:ArthurBook/dotfiles.git
 ```
 
-## TODO
-- aliases
-- paths (https://github.com/zsh-users/zsh-syntax-highlighting.git)
-- https://github.com/koekeishiya/yabai
-
-Cookbooks:
-https://github.com/entelecheia/dotfiles

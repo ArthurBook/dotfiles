@@ -1,0 +1,17 @@
+path_prepend() {
+  # Function to ensure unique entries in PATH
+  case ":$PATH:" in
+    *":$1:"*) ;;  # Skip if already in PATH
+    *) PATH="$1:$PATH" ;;
+  esac
+}
+
+# Add common paths
+path_prepend "/usr/local/bin"
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# MacOS specific paths
+path_prepend "/opt/homebrew/bin"
+
+{{- end }}
