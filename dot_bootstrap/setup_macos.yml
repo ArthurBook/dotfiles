@@ -23,6 +23,7 @@
         state: present
       with_items:
         - zsh
+        - age
         - git
         - make
         - pyenv

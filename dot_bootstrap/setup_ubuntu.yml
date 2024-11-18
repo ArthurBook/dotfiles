@@ -21,10 +21,13 @@
         name: "{{ item }}"
         state: present
       with_items:
+        - age
         - docker.io
         - zsh
         - git
         - make
+
+    # TODO: add bob + neovim setup
 
     - name: Install Oh My Zsh
       ansible.builtin.git:
