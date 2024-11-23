@@ -31,18 +31,6 @@
         - bob
         - docker-compose
 
-    - name: Install Oh My Zsh
-      ansible.builtin.git:
-        repo: https://github.com/ohmyzsh/ohmyzsh.git
-        dest: "{{ ansible_env.HOME }}/.oh-my-zsh"
-        depth: 1
-
-    - name: Install zsh autosuggestions
-      ansible.builtin.git:
-        repo: https://github.com/zsh-users/zsh-autosuggestions
-        dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-        depth: 1
-
     - name: Get brew prefix
       ansible.builtin.command: brew --prefix
       register: brew_prefix
