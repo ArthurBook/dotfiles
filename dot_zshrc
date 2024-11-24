@@ -7,6 +7,7 @@ COMPLETION_WAITING_DOTS="true"      # See https://github.com/ohmyzsh/ohmyzsh/wik
 HIST_STAMPS="yyyy-mm-dd"            # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps
 
 plugins=(                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#plugins
+  zsh-syntax-highlighting           # https://github.com/zsh-users/zsh-syntax-highlighting
   zsh-autosuggestions               # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
   common-aliases                    # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases
   dotenv                            # automatically loads .env file in the current directory
