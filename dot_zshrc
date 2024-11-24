@@ -1,11 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 source ~/.config/zsh_path
 
-ZSH_TMUX_AUTOSTART="true"
-ZSH_TMUX_AUTOQUIT="true"
+ZSH_THEME="gnzh"                    # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 COMPLETION_WAITING_DOTS="true"      # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#completion_waiting_dots
-ZSH_THEME="agnoster"                # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 HIST_STAMPS="yyyy-mm-dd"            # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps
 
 plugins=(                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#plugins
@@ -22,11 +20,18 @@ plugins=(                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Se
   poetry-env                        # automatically changes poetry environment when you cd into or out of the project directory
   tmux                              # Aliases for tmux. See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 )
+
 zstyle ':omz:update' mode reminder  # See: https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#omzupdate-mode
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 export EDITOR=nvim                  # See: https://www.chezmoi.io/reference/configuration-file/editor/
+
+if [ "$TERM_PROGRAM" != "vscode" ]
+then
+  ZSH_TMUX_AUTOSTART=true           # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
+  ZSH_TMUX_AUTOQUIT=true            # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
+fi
 
 # Source
 source ~/.config/zsh_alias
