@@ -1,7 +1,10 @@
 source ~/.config/zsh_path
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1 
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
 # User configuration
-COMPLETION_WAITING_DOTS="true"      # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#completion_waiting_dots
+COMPLETION_WAITING_DOTS=true        # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#completion_waiting_dots
 HIST_STAMPS="yyyy-mm-dd"            # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps
 plugins=(                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#plugins
   zsh-syntax-highlighting           # https://github.com/zsh-users/zsh-syntax-highlighting
