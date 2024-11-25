@@ -1,0 +1,92 @@
+add_newline = false
+format = """
+[ $os](bg:#a3aed2 fg:#090c0c)\
+[](bg:#769ff0 fg:#a3aed2)\
+$directory\
+[](fg:#769ff0 bg:#394260)\
+$git_branch\
+$git_status\
+[](fg:#394260 bg:#212736)\
+$python\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:#212736 bg:#1d2230)\
+$kubernetes\
+[ ](fg:#1d2230)\
+\n$cmd_duration $character"""
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[](bold red)'
+
+[directory]
+style = "fg:#e3e5e5 bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_symbol = "…/"
+truncate_to_repo = true
+truncation_length = 3
+fish_style_pwd_dir_length = 1
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[kubernetes]
+disabled = false
+style = "bg:#1d2230"
+format = '[$symbol$context( \($namespace\))]($style)'
+
+[os]
+disabled = false
+format = "$symbol"
+
+[os.symbols]
+Ubuntu = ""
+Linux = ""
+Macos = ""
+Windows = ""
+
+[cmd_duration]
+min_time = 1_000
+format = 'underwent [$duration](bold yellow)'
+min_time_to_notify = 60_000
+show_notifications = true
+

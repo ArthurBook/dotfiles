@@ -1,11 +1,8 @@
-export ZSH="$HOME/.oh-my-zsh"
 source ~/.config/zsh_path
 
-ZSH_THEME="gnzh"                    # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
+# User configuration
 COMPLETION_WAITING_DOTS="true"      # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#completion_waiting_dots
 HIST_STAMPS="yyyy-mm-dd"            # See https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#hist_stamps
-
 plugins=(                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#plugins
   zsh-syntax-highlighting           # https://github.com/zsh-users/zsh-syntax-highlighting
   zsh-autosuggestions               # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
@@ -13,26 +10,22 @@ plugins=(                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Se
   dotenv                            # automatically loads .env file in the current directory
   git                               # git aliases
   git-commit                        # git commit aliases
-  history                           # history search
-  kubectx                           # shows the current kubectl context in the prompt
   kubectl                           # kubectl completion & aliases
   magic-enter                       # enter shows git status or ls
   poetry                            # poetry completion & aliases
-  poetry-env                        # automatically changes poetry environment when you cd into or out of the project directory
-  tmux                              # Aliases for tmux. See: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
+  tmux                              # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 )
 
-zstyle ':omz:update' mode reminder  # See: https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#omzupdate-mode
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-export EDITOR=nvim                  # See: https://www.chezmoi.io/reference/configuration-file/editor/
-
-if [ "$TERM_PROGRAM" != "vscode" ]
-then
+if [ "${TERM_PROGRAM}" != "vscode" ]; then
   ZSH_TMUX_AUTOSTART=true           # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
   ZSH_TMUX_AUTOQUIT=true            # See https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 fi
 
+zstyle ':omz:update' mode reminder  # See: https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#omzupdate-mode
+source $ZSH/oh-my-zsh.sh
+
 # Source
+export EDITOR=nvim                  # See: https://www.chezmoi.io/reference/configuration-file/editor/
 source ~/.config/zsh_alias
+
+eval "$(starship init zsh)"
