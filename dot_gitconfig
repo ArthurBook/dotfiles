@@ -19,4 +19,4 @@
 [core]
 	excludesfile = ~/.gitignore
 [oh-my-zsh]
-	git-commit-alias = ccbe504f224a0aae688aaa729d4258e3392a9fc8
+	git-commit-alias = 366d25435229bfa725109a147d6cb2fef8011b3c
