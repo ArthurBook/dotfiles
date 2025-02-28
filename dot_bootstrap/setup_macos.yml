@@ -16,6 +16,8 @@
       with_items:
         - docker
         - visual-studio-code 
+        - ghostty
+        - obsidian
 
     - name: Install homebrew packages
       community.general.homebrew:
@@ -23,6 +25,8 @@
         state: present
       with_items:
         - zsh
+        - tmux
+        - starship
         - age
         - git
         - make
