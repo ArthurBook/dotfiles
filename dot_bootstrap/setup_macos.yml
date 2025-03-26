@@ -34,6 +34,7 @@
         - rustup
         - bob
         - docker-compose
+        - mutagen-io/mutagen/mutagen
 
     - name: Get brew prefix
       ansible.builtin.command: brew --prefix
