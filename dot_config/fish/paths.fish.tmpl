@@ -1,0 +1,28 @@
+function path_prepend
+    # Function to ensure unique entries in PATH
+    if not contains -- "$argv[1]" $PATH
+        set -gx PATH "$argv[1]" $PATH
+    end
+end
+
+# Common paths
+path_prepend /usr/local/bin
+set -x EZA_CONFIG_DIR "$HOME/.config/eza"
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+# macos specific paths
+path_prepend /opt/homebrew/bin
+path_prepend $HOME/.local/share/bob/nvim-bin
+
+{{- end }}
+
+{{- if eq .chezmoi.os "linux" -}}
+
+# linux specific paths
+path_prepend $HOME/bin
+path_prepend $HOME/.cargo/bin
+path_prepend $HOME/.local/share/bob/nvim-bin
+
+{{- end }}
+

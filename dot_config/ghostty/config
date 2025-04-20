@@ -1,0 +1,4 @@
+background-opacity = 0.85
+font-size = 10
+command = /opt/homebrew/bin/fish --login --interactive
+
