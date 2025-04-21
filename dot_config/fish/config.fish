@@ -16,6 +16,11 @@ if status is-interactive
     # tmux
     set fish_tmux_autostart true
 
+    # defaults
+    set -Ux EDITOR nvim
+    set -Ux VISUAL nvim
+    set -Ux PAGER "bat --paging=auto"
+
     # prompt
     starship init fish | source
 end

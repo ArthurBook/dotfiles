@@ -28,6 +28,7 @@
       - mutagen-io/mutagen/mutagen
       - eza
       - fastfetch
+      - bat
 
   tasks:
     #--------- brew stuff ---------
