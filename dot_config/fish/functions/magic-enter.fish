@@ -4,14 +4,6 @@
 # Adapted by: Arthur Book
 # License: MIT
 
-function magic-enter-cmd --description "Print the command to run when no command was given"
-    set -l cmd 'eza -l --hyperlink --header --git --git-repos --icons always -T -L 1'
-    if command git rev-parse --is-inside-work-tree &>/dev/null
-        set cmd git-pretty-status
-    end
-    echo $cmd
-end
-
 function magic-enter
     set -l cmd (commandline)
     if test -z "$cmd"
@@ -19,6 +11,14 @@ function magic-enter
         commandline -f suppress-autosuggestion
     end
     commandline -f execute
+end
+
+function magic-enter-cmd --description "Print the command to run when no command was given"
+    set -l cmd 'eza -l --hyperlink --header --git --git-repos --icons always -T -L 1'
+    if command git rev-parse --is-inside-work-tree &>/dev/null
+        set cmd git_summary
+    end
+    echo $cmd
 end
 
 function magic-enter-bindings --description "Bind magic-enter for default and vi key bindings"

@@ -29,6 +29,7 @@
       - eza
       - fastfetch
       - bat
+      - git-graph
 
   tasks:
     #--------- brew stuff ---------
