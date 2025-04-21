@@ -7,6 +7,7 @@ end
 
 # Common paths
 path_prepend /usr/local/bin
+set -x XDG_CONFIG_HOME "$HOME/.config"
 set -x EZA_CONFIG_DIR "$HOME/.config/eza"
 
 {{ if eq .chezmoi.os "darwin" -}}

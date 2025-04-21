@@ -30,7 +30,7 @@
       - fastfetch
       - bat
       - git-graph
-      - diff-so-fancy
+      - git-delta
 
   tasks:
     #--------- brew stuff ---------
