@@ -27,6 +27,7 @@
       - autossh
       - mutagen-io/mutagen/mutagen
       - eza
+      - fastfetch
 
   tasks:
     #--------- brew stuff ---------
