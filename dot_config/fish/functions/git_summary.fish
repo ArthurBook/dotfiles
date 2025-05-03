@@ -1,5 +1,5 @@
 function git_summary
-    if not test -d .git
+    if not command git rev-parse --is-inside-work-tree &>/dev/null
         set_color --bold f7768e
         echo "❌ Not a Git repository."
         set_color normal
