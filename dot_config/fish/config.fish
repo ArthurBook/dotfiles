@@ -8,7 +8,7 @@ if status is-interactive
     end
 
     # keybinds
-    source $config_root/abbr.fish
+    source $config_root/keybinds.fish
 
     # paths
     source $config_root/paths.fish
