@@ -31,6 +31,7 @@
       - bat
       - git-graph
       - git-delta
+      - cloc
 
   tasks:
     #--------- brew stuff ---------
