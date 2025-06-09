@@ -27,39 +27,27 @@ tail-slurm() {
         echo "job id: $(sacct -j "$jobid" -x)"
         return 1
     else
-        local stdout=$(echo "$jobinfo" | grep -op 'stdout=\s+' | cut -d= -f2)
-        local stderr=$(echo "$jobinfo" | grep -op 'stderr=\s+' | cut -d= -f2)
+        local stdout=$(echo "$jobinfo" | grep -oP 'StdOut=\K\S+')
+        local stderr=$(echo "$jobinfo" | grep -oP 'StdErr=\K\S+')
         tail-files "$stdout" "$stderr"
     fi
 }
 
 tail-files() {
-    if [ "$#" -eq 0 ]; then
-        echo "usage: tail-files file [file ...]"
-        return 1
-    fi
-
+    [ "$#" -eq 0 ] && { echo "usage: tail-files file [file ...]"; return 1; }
     local pids=()
-
-    cleanup() {
-        echo "cleaning up..."
-        for pid in "${pids[@]}"; do
-            kill "$pid" 2>/dev/null
-        done
-        wait
-    }
-
-    trap cleanup sigint sigterm exit
-
+    trap 'kill "${pids[@]}" 2>/dev/null' EXIT
+    
     for file in "$@"; do
-        if [ -f "$file" ]; then
-            tail -n 100 -f "$file" | sed "s|^|[$file] |" &
-            pids+=($!)
-        else
-            echo "file not found: $file" >&2
-        fi
+        [ -f "$file" ] || { echo "file not found: $file" >&2; continue; }
+        tail -n 100 -f "$file" | perl -pe '
+            s/\r.*?(?=\n|$)//g;  # Remove CR and everything after it
+            s/\x1b\[[0-9;]*[mGKH]//g;  # Remove ANSI escape codes
+            next if /^\s*$/;  # Skip empty lines
+            s/^/['"$file"'] /;
+        ' &
+        pids+=($!)
     done
-
     wait
 }
 
@@ -114,5 +102,5 @@ _parse_latest_flag() { # gets the --latest flag and returns the index if it exis
 
 _get_latest_slurm_job() {
     local index="${1:-0}"
-    sacct -n -x -o jobid | tail -n "-$((index + 1))" | head -n 1
+    sacct --format=JobID -n -X | tail -n "-$((index + 1))" | head -n 1
 }
