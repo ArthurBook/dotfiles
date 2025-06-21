@@ -15,7 +15,6 @@
 	undo = reset --soft HEAD~1
 	reword = commit --amend --only
 	amend = commit --amend --no-edit
-  	clean-branches = "!f() { git fetch --prune && git branch -vv | awk '/: gone]/{if ($3 == \"[gone]\") print $1}' | xargs -r git branch -d; }; f"
 [interactive]
 	diffFilter = diff-so-fancy --patch
 [color]
