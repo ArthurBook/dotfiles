@@ -14,7 +14,7 @@ function magic-enter
 end
 
 function magic-enter-cmd --description "Print the command to run when no command was given"
-    set -l cmd 'eza -l --hyperlink --header --git --git-repos --icons always -T -L 1'
+    set -l cmd 'eza -l --hyperlink --header --git --git-repos --icons always -T -L 0'
     if command git rev-parse --is-inside-work-tree &>/dev/null
         set cmd git_summary
     end
