@@ -1,0 +1,79 @@
+tap "mutagen-io/mutagen"
+# Simple, modern, secure file encryption
+brew "age"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Automatically restart SSH sessions and tunnels
+brew "autossh"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Version manager for neovim
+brew "bob"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Statistics utility to count lines of code
+brew "cloc"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Plugin manager for the Fish shell
+brew "fisher"
+# Zstandard is a real-time compression algorithm
+brew "zstd"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Command-line tool to show clear git graphs arranged for your branching model
+brew "git-graph"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Utility for directing compilation
+brew "make"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Rust toolchain installer
+brew "rustup"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Internet file retriever
+brew "wget"
+# Fast file synchronization and network forwarding for remote development
+brew "mutagen-io/mutagen/mutagen"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Write, edit, and chat about your code with AI
+cask "cursor"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Client for the Google Drive storage service
+cask "google-drive"
+# Full TeX Live distribution with GUI applications
+cask "mactex"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+# Native desktop client for WhatsApp
+cask "whatsapp"
+# Video communication and virtual meeting platform
+cask "zoom"

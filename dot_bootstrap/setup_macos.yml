@@ -7,43 +7,9 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
     remote_regular_user: "{{ lookup('env', 'USER') }}"  # Auto-detect current user
-    homebrew_casks:
-      - docker
-      - visual-studio-code
-      - ghostty
-      - obsidian
-    homebrew_packages:
-      - fish
-      - fisher
-      - starship
-      - age
-      - git
-      - lazygit
-      - make
-      - uv
-      - bob
-      - docker-compose
-      - autossh
-      - mutagen-io/mutagen/mutagen
-      - eza
-      - fastfetch
-      - bat
-      - git-graph
-      - git-delta
-      - cloc
 
   tasks:
     #--------- brew stuff ---------
-    - name: Install Homebrew casks
-      community.general.homebrew_cask:
-        name: "{{ item }}"
-        state: present
-      loop: "{{ homebrew_casks }}"
-    - name: Install Homebrew packages
-      community.general.homebrew:
-        name: "{{ item }}"
-        state: present
-      with_items: "{{ homebrew_packages }}"
     - name: Get brew prefix
       ansible.builtin.command: brew --prefix
       register: brew_prefix
