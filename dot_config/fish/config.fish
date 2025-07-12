@@ -13,6 +13,11 @@ if status is-interactive
     # paths
     source $config_root/paths.fish
 
+    if set -q ZELLIJ
+    else
+        zellij
+    end
+
     # prompt
     starship init fish | source
 end

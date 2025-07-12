@@ -1,0 +1,22 @@
+layout {
+  // dev tools
+  pane size="80%" split_direction="vertical" { 
+    pane size="50%" {
+      command "nvim"
+    }
+    pane size="50%" {
+      command "lazygit"
+    }
+  }
+  pane split_direction="horizontal" {
+    pane size="20%"
+  }
+
+  // Status bar
+  pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+  }
+  pane size=1 borderless=true {
+      plugin location="zellij:status-bar"
+  }
+}
