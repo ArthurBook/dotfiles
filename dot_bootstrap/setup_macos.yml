@@ -15,7 +15,6 @@
     homebrew_packages:
       - fish
       - fisher
-      - tmux
       - starship
       - age
       - git

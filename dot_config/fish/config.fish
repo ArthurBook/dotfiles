@@ -13,9 +13,6 @@ if status is-interactive
     # paths
     source $config_root/paths.fish
 
-    # tmux
-    set fish_tmux_autostart true
-
     # prompt
     starship init fish | source
 end
