@@ -9,6 +9,8 @@ brew "autossh"
 brew "bat"
 # Version manager for neovim
 brew "bob"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
 # Statistics utility to count lines of code

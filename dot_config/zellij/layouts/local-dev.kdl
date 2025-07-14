@@ -1,5 +1,8 @@
 layout {
   // dev tools
+  pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+  }
   pane size="80%" split_direction="vertical" { 
     pane size="50%" {
       command "nvim"
@@ -10,11 +13,6 @@ layout {
   }
   pane split_direction="horizontal" {
     pane size="20%"
-  }
-
-  // Status bar
-  pane size=1 borderless=true {
-      plugin location="zellij:tab-bar"
   }
   pane size=1 borderless=true {
       plugin location="zellij:status-bar"
