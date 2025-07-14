@@ -1,10 +1,23 @@
 layout {
-  // Status bar
-  pane
-  pane size=1 borderless=true {
-      plugin location="zellij:tab-bar"
+  // templates
+  default_tab_template {
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=1 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+  } 
+
+
+  // layout
+  tab name="btop" {
+    pane {
+      command "btop"
+    }
   }
-  pane size=1 borderless=true {
-      plugin location="zellij:status-bar"
+  tab focus=true {
+    pane focus=true
   }
 }
