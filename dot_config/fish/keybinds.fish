@@ -1,6 +1,9 @@
+abbr cz chezmoi
+abbr cza chezmoi apply
+abbr z zellij
+abbr za zellij attach
 abbr nv nvim
 abbr gp git push origin
-abbr ls eza -l --hyperlink --header --git --git-repos --icons always -T -L 1
 
 # good old opt & cmd navigation
 bind -M insert ctrl-u backward-kill-line

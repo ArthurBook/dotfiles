@@ -4,6 +4,6 @@ git:
     pager: delta --dark --paging=never
 
   log:
-    showGraph: true
+    showGraph: always
     allBranchesLog: true
 
