@@ -1,6 +1,6 @@
 layout {
   // templates
-  default_tab_template {
+  default_tab_template cwd="~" {
     pane size=1 borderless=true {
         plugin location="zellij:tab-bar"
     }
@@ -10,13 +10,32 @@ layout {
     }
   } 
 
-
   // layout
   tab name="btop" {
     pane {
       command "btop"
     }
   }
+
+  tab name="port-forwards" {
+    pane split_direction="vertical" {
+      pane
+      pane
+    }
+    pane split_direction="vertical" {
+      pane
+      pane
+    }
+    pane split_direction="vertical" {
+      pane
+      pane
+    }
+    pane split_direction="vertical" {
+      pane
+      pane
+    }
+  }
+
   tab focus=true {
     pane focus=true
   }

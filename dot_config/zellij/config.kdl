@@ -9,3 +9,10 @@ ui {
   }
 }
 
+keybinds {
+  unbind "Alt f" // conflicts with the text jumps
+  normal {
+    bind "Super f" { ToggleFloatingPanes; } // remap
+    bind "Super k" { Clear; }
+  }
+}

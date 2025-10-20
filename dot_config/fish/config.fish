@@ -7,11 +7,10 @@ if status is-interactive
         functions --query (basename $f .fish); or functions (basename $f .fish) >/dev/null
     end
 
-    # keybinds
+    # source
     source $config_root/keybinds.fish
-
-    # paths
     source $config_root/paths.fish
+    source $config_root/secrets.fish
 
     # prompt
     starship init fish | source
