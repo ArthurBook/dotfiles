@@ -7,6 +7,7 @@
     ./shell/zellij.nix
     ./editor/neovim.nix
     ./packages.nix
+    ./git.nix
   ];
 
   home.stateVersion = "24.05";
