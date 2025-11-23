@@ -5,6 +5,7 @@
     ./shell/fish.nix
     ./shell/starship.nix
     ./shell/zellij.nix
+    ./editor/neovim.nix
     ./packages.nix
   ];
 

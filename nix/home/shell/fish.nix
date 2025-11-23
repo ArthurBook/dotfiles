@@ -16,6 +16,7 @@
     shellAliases = {
       ll = "ls -lh";
       la = "ls -lah";
+      nv = "nvim";
     };
     functions = {
       fish_greeting = "";
