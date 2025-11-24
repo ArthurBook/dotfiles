@@ -42,6 +42,7 @@
         vim.opt.expandtab = true
         vim.opt.shiftwidth = 2
         vim.opt.tabstop = 2
+        vim.opt.clipboard = "unnamedplus"
 
         -- Set colorscheme first
         vim.cmd.colorscheme("tokyonight")
@@ -62,10 +63,12 @@
               name = "which-key.nvim",
               event = "VeryLazy",
               config = function()
-                require("which-key").setup({ preset = "helix" })
-                require("which-key").register({
-                  ["<leader>f"] = { name = "Find" },
-                  ["<leader>s"] = { name = "Search" },
+                require("which-key").setup({
+                  preset = "helix",
+                  spec = {
+                    { "<leader>f", group = "Find" },
+                    { "<leader>s", group = "Search" },
+                  }
                 })
               end,
             },
@@ -227,7 +230,7 @@
                 })
 
                 -- Python linting with ruff
-                lspconfig.ruff_lsp.setup({
+                lspconfig.ruff.setup({
                   capabilities = capabilities,
                 })
 
