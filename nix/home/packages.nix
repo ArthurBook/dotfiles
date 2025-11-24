@@ -9,5 +9,6 @@
     ripgrep # Recursively searches directories
     fd # The friendly file finder
     pyright # Python LSP
+    eza # Modern replacement for ls with colors and git integration
   ];
 }

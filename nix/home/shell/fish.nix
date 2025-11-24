@@ -14,8 +14,10 @@
       end
     '';
     shellAliases = {
-      ll = "ls -lh";
-      la = "ls -lah";
+      ls = "eza --color=always --group-directories-first";
+      ll = "eza -l --color=always --group-directories-first";
+      la = "eza -la --color=always --group-directories-first";
+      lt = "eza -T --color=always --group-directories-first";
       nv = "nvim";
     };
     functions = {
