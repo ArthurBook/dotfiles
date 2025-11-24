@@ -50,8 +50,16 @@
 
         -- Enable transparency
         vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+        
+        -- Additional transparency for UI components
+        vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
+        vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "none" })
 
         require("lazy").setup({
           rocks = { enabled = false },
@@ -106,7 +114,13 @@
                 { dir = "${nui-nvim}", name = "nui.nvim" },
               },
               config = function()
-                require("neo-tree").setup({})
+                require("neo-tree").setup({
+                  window = {
+                    position = "right",
+                    width = 30,
+                  },
+                  popup_border_style = "rounded",
+                })
               end,
             },
             {
