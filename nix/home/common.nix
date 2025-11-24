@@ -11,6 +11,9 @@
     ./git.nix
   ];
 
+  # Enable font installation
+  fonts.fontconfig.enable = true;
+
   # Dust configuration file
   home.file.".config/dust/config.toml".text = ''
     # Tokyo Night themed dust configuration

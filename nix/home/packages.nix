@@ -12,6 +12,9 @@
     fd # The friendly file finder
     procs # Modern ps replacement
     ripgrep # Recursively searches directories
+    
+    # Nerd Fonts
+    nerd-fonts.hack
   ];
 
   programs.bat = {
