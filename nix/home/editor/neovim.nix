@@ -311,6 +311,10 @@
               name = "nvim-notify",
               event = "VeryLazy",
               config = function()
+                require("notify").setup({
+                  background_colour = "#000000",
+                  opacity = 50,
+                })
                 vim.notify = require("notify")
               end,
             },
