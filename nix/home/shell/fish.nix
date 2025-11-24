@@ -6,6 +6,7 @@
     interactiveShellInit = ''
       set -gx PATH $HOME/.local/bin $PATH
       starship init fish | source
+      direnv hook fish | source
       set -U fish_key_bindings fish_vi_key_bindings
 
       if set -q ZELLIJ

@@ -6,6 +6,7 @@
 
     ignores = [
       ".env*"
+      ".envrc"
       ".DS_Store"
       ".vscode/.*"
       ".python.version"
