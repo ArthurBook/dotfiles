@@ -11,6 +11,6 @@ Install [nix](https://nixos.org/download/):
 ```bash
 bash <(curl -L https://nixos.org/nix/install) --daemon
 echo 'experimental-features = nix-command flakes' | sudo tee -a /etc/nix/nix.conf
-nix run github:nix-community/home-manager/release-24.05 -- switch --flake .#macos
+nix run home-manager/master -- switch --flake .#macos
 ```
 
