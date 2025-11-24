@@ -26,6 +26,7 @@
       pkgs.vimPlugins.indent-blankline-nvim
       pkgs.vimPlugins.noice-nvim
       pkgs.vimPlugins.nvim-notify
+      pkgs.vimPlugins.flash-nvim
       pkgs.ruff
     ];
 
@@ -308,6 +309,45 @@
                       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                       ["vim.lsp.util.stylize_markdown"] = true,
                       ["cmp.entry.get_documentation"] = true,
+                    },
+                  },
+                })
+              end,
+            },
+            {
+              dir = "${flash-nvim}",
+              name = "flash.nvim",
+              event = "VeryLazy",
+              keys = {
+                { "s", function() require("flash").jump() end, desc = "Flash", mode = { "n", "x", "o" } },
+                { "S", function() require("flash").treesitter() end, desc = "Flash Treesitter", mode = { "n", "o", "x" } },
+                { "r", function() require("flash").remote() end, desc = "Remote Flash", mode = "o" },
+                { "R", function() require("flash").treesitter_search() end, desc = "Treesitter Search", mode = { "o", "x" } },
+                { "<c-s>", function() require("flash").toggle() end, desc = "Toggle Flash Search", mode = { "c" } },
+              },
+              config = function()
+                require("flash").setup({
+                  labels = "asdfghjklqwertyuiopzxcvbnm",
+                  search = {
+                    multi_window = true,
+                    forward = true,
+                    wrap = true,
+                  },
+                  label = {
+                    uppercase = false,
+                    after = { 0, 0 },
+                    before = { 0, 0 },
+                    style = "overlay",
+                  },
+                  highlight = {
+                    backdrop = true,
+                  },
+                  modes = {
+                    search = {
+                      enabled = true,
+                    },
+                    char = {
+                      enabled = false,
                     },
                   },
                 })
