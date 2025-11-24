@@ -43,6 +43,21 @@
     sha256 = "0mkiad3jhqy9rdm0sj9gwi46v4i38m9vg8021cwd1qx7003mijh6";
   };
 
+  # Lazygit configuration
+  home.file.".config/lazygit/config.yml".text = ''
+    promptToReturnFromSubprocess: false
+    git:
+      paging:
+        colorArg: always
+    os:
+      editCommand: 'nvim'
+      editCommandTemplate: '{{editor}} {{filename}}'
+      editInTerminal: true
+      suspend: false
+    gui:
+      returnImmediately: true
+  '';
+
   # Bottom (btm) configuration with Tokyo Night theme
   home.file.".config/bottom/bottom.toml".text = ''
     # Tokyo Night color scheme
