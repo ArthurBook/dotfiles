@@ -16,7 +16,7 @@
   home.file.".config/ghostty/config".text = ''
     font-family = "Hack Nerd Font Mono"
     font-size = 10
-    background-opacity = 0.85
+    background-opacity = 0.90
 
     # Tokyo Night theme colors
     background = 1a1b26
