@@ -5,15 +5,12 @@
 
   home.packages = with pkgs; [
     bottom # Modern htop replacement
-    claude-code # Agentic coding tool that lives in your terminal
     cloc # Count lines of code
     direnv # Automatically load environment variables
     dust # Modern replacement for du with better visualization
     eza # Modern replacement for ls with colors and git integration
     fd # The friendly file finder
-    lazygit # A simple terminal UI for git commands
     procs # Modern ps replacement
-    pyright # Python LSP
     ripgrep # Recursively searches directories
   ];
 
@@ -43,20 +40,6 @@
     sha256 = "0mkiad3jhqy9rdm0sj9gwi46v4i38m9vg8021cwd1qx7003mijh6";
   };
 
-  # Lazygit configuration
-  home.file.".config/lazygit/config.yml".text = ''
-    promptToReturnFromSubprocess: false
-    git:
-      paging:
-        colorArg: always
-    os:
-      editCommand: 'nvim'
-      editCommandTemplate: '{{editor}} {{filename}}'
-      editInTerminal: true
-      suspend: false
-    gui:
-      returnImmediately: true
-  '';
 
   # Bottom (btm) configuration with Tokyo Night theme
   home.file.".config/bottom/bottom.toml".text = ''

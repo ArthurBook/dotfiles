@@ -6,6 +6,7 @@
     ./shell/starship.nix
     ./shell/zellij.nix
     ./editor/neovim.nix
+    ./editor/tools.nix
     ./packages.nix
     ./git.nix
   ];
