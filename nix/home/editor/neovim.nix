@@ -169,8 +169,13 @@
                 vim.api.nvim_set_hl(0, "DashboardCenter", { bg = "NONE" })
                 vim.api.nvim_set_hl(0, "DashboardFooter", { bg = "NONE" })
 
-                -- Keymap to quit with 'q'
-                vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, noremap = true, silent = true })
+                -- Set 'q' to quit only for dashboard buffers
+                vim.api.nvim_create_autocmd("FileType", {
+                  pattern = "dashboard",
+                  callback = function()
+                    vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, noremap = true, silent = true })
+                  end,
+                })
               end,
             },
             {
