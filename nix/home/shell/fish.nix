@@ -20,6 +20,7 @@
       la = "eza -la --color=always --group-directories-first";
       lt = "eza -T --color=always --group-directories-first";
       nv = "nvim";
+      cc = "claude";
     };
     functions = {
       fish_greeting = "";
