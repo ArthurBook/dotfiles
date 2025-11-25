@@ -2,13 +2,13 @@
 
 {
   imports = [
+    ./git.nix
+    ./packages.nix
+    ./editor/neovim.nix
+    ./editor/tools.nix
     ./shell/fish.nix
     ./shell/starship.nix
     ./shell/zellij.nix
-    ./editor/neovim.nix
-    ./editor/tools.nix
-    ./packages.nix
-    ./git.nix
   ];
 
   # Enable font installation
@@ -23,6 +23,6 @@
     force_colors = true
   '';
 
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.05";
 }
 
