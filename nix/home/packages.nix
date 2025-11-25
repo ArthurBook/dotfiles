@@ -12,7 +12,8 @@
     fd # The friendly file finder
     procs # Modern ps replacement
     ripgrep # Recursively searches directories
-    
+    uv # Fast Python package and project manager
+
     # Nerd Fonts
     nerd-fonts.hack
   ];
