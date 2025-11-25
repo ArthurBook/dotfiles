@@ -30,6 +30,7 @@
       lt = "eza -T --color=always --group-directories-first";
       nv = "nvim";
       cc = "claude";
+      da = "direnv allow";
     };
     functions = {
       fish_greeting = "";
