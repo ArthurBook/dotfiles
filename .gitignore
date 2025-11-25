@@ -1,0 +1,9 @@
+# SOPS / Age secret management
+secrets/keys/
+*.age.key
+.sops/
+**/sops-*
+
+# Nix
+result
+result-*

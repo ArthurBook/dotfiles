@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   programs.git = {
@@ -13,10 +13,6 @@
     ];
 
     extraConfig = {
-      include = {
-        # NOTE: not checked into git; contains secrets
-        path = "~/.config/git/personal";
-      };
       core = {
         editor = "nvim";
       };
