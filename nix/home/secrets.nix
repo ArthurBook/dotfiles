@@ -7,8 +7,8 @@
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
 
     secrets = {
-      "gitconfig" = {key="gitconfig";};
-      "sshconfig" = {key="sshconfig";};
+      "gitconfig" = { key = "gitconfig"; };
+      "sshconfig" = { key = "sshconfig"; };
     };
   };
 

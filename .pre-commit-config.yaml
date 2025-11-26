@@ -5,7 +5,21 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: check-added-large-files
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.18.0
     hooks:
       - id: gitleaks
+  - repo: https://github.com/nix-community/nixpkgs-fmt
+    rev: v1.3.0
+    hooks:
+      - id: nixpkgs-fmt
+  - repo: local
+    hooks:
+      - id: nix-check
+        name: nix-check
+        entry: nix flake check
+        language: system
+        files: '\.(nix)$'
+        pass_filenames: false
