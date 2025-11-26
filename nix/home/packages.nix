@@ -22,6 +22,7 @@
 
     # Network tools
     tailscale # Zero config VPN for building secure networks
+    mosh # Mobile shell with roaming and intelligent local echo
 
     # Nerd Fonts
     nerd-fonts.hack
