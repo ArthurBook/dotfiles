@@ -31,8 +31,9 @@
     enable = true;
     config = {
       theme = "tokyonight";
-      style = "numbers,changes,header";
-      pager = "less -FR";
+      style = "grid,header,numbers";
+      pager = "less -RK";
+      paging = "always";
     };
     themes = {
       tokyonight = {
