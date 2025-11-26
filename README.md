@@ -9,7 +9,15 @@
 
 Install [nix](https://nixos.org/download/):
 ```bash
-bash <(curl -L https://nixos.org/nix/install) --daemon
+bash <(curl -L https://nixos.org/nix/install) --daemon # get nix
 echo 'experimental-features = nix-command flakes' | sudo tee -a /etc/nix/nix.conf
+source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh # activate nix
+```
+
+Setup env:
+```bash
+DOTFILES_LOC=~/projects/dotfiles
+git clone git@github.com:ArthurBook/dotfiles.git ${DOTFILES_LOC}
+cd ${DOTFILES_LOC}
 nix run home-manager/master -- switch --flake .#macos
 ```
