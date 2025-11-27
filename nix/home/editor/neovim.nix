@@ -26,6 +26,7 @@
       pkgs.vimPlugins.indent-blankline-nvim
       pkgs.vimPlugins.noice-nvim
       pkgs.vimPlugins.nvim-notify
+      pkgs.vimPlugins.flash-nvim
       pkgs.ruff
     ];
 
@@ -42,14 +43,23 @@
         vim.opt.expandtab = true
         vim.opt.shiftwidth = 2
         vim.opt.tabstop = 2
+        vim.opt.clipboard = "unnamedplus"
 
         -- Set colorscheme first
         vim.cmd.colorscheme("tokyonight")
 
         -- Enable transparency
         vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
         vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+        
+        -- Additional transparency for UI components
+        vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "none" })
+        vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "none" })
 
         require("lazy").setup({
           rocks = { enabled = false },
@@ -62,10 +72,12 @@
               name = "which-key.nvim",
               event = "VeryLazy",
               config = function()
-                require("which-key").setup({ preset = "helix" })
-                require("which-key").register({
-                  ["<leader>f"] = { name = "Find" },
-                  ["<leader>s"] = { name = "Search" },
+                require("which-key").setup({
+                  preset = "helix",
+                  spec = {
+                    { "<leader>f", group = "Find" },
+                    { "<leader>s", group = "Search" },
+                  }
                 })
               end,
             },
@@ -102,7 +114,13 @@
                 { dir = "${nui-nvim}", name = "nui.nvim" },
               },
               config = function()
-                require("neo-tree").setup({})
+                require("neo-tree").setup({
+                  window = {
+                    position = "right",
+                    width = 30,
+                  },
+                  popup_border_style = "rounded",
+                })
               end,
             },
             {
@@ -165,8 +183,13 @@
                 vim.api.nvim_set_hl(0, "DashboardCenter", { bg = "NONE" })
                 vim.api.nvim_set_hl(0, "DashboardFooter", { bg = "NONE" })
 
-                -- Keymap to quit with 'q'
-                vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, noremap = true, silent = true })
+                -- Set 'q' to quit only for dashboard buffers
+                vim.api.nvim_create_autocmd("FileType", {
+                  pattern = "dashboard",
+                  callback = function()
+                    vim.keymap.set("n", "q", "<cmd>qa<cr>", { buffer = true, noremap = true, silent = true })
+                  end,
+                })
               end,
             },
             {
@@ -227,7 +250,7 @@
                 })
 
                 -- Python linting with ruff
-                lspconfig.ruff_lsp.setup({
+                lspconfig.ruff.setup({
                   capabilities = capabilities,
                 })
 
@@ -288,6 +311,10 @@
               name = "nvim-notify",
               event = "VeryLazy",
               config = function()
+                require("notify").setup({
+                  background_colour = "#000000",
+                  opacity = 50,
+                })
                 vim.notify = require("notify")
               end,
             },
@@ -305,6 +332,45 @@
                       ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
                       ["vim.lsp.util.stylize_markdown"] = true,
                       ["cmp.entry.get_documentation"] = true,
+                    },
+                  },
+                })
+              end,
+            },
+            {
+              dir = "${flash-nvim}",
+              name = "flash.nvim",
+              event = "VeryLazy",
+              keys = {
+                { "s", function() require("flash").jump() end, desc = "Flash", mode = { "n", "x", "o" } },
+                { "S", function() require("flash").treesitter() end, desc = "Flash Treesitter", mode = { "n", "o", "x" } },
+                { "r", function() require("flash").remote() end, desc = "Remote Flash", mode = "o" },
+                { "R", function() require("flash").treesitter_search() end, desc = "Treesitter Search", mode = { "o", "x" } },
+                { "<c-s>", function() require("flash").toggle() end, desc = "Toggle Flash Search", mode = { "c" } },
+              },
+              config = function()
+                require("flash").setup({
+                  labels = "asdfghjklqwertyuiopzxcvbnm",
+                  search = {
+                    multi_window = true,
+                    forward = true,
+                    wrap = true,
+                  },
+                  label = {
+                    uppercase = false,
+                    after = { 0, 0 },
+                    before = { 0, 0 },
+                    style = "overlay",
+                  },
+                  highlight = {
+                    backdrop = true,
+                  },
+                  modes = {
+                    search = {
+                      enabled = true,
+                    },
+                    char = {
+                      enabled = false,
                     },
                   },
                 })

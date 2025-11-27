@@ -6,6 +6,7 @@
 
     ignores = [
       ".env*"
+      ".envrc"
       ".DS_Store"
       ".vscode/.*"
       ".python.version"
@@ -13,7 +14,8 @@
 
     extraConfig = {
       include = {
-        path = "~/.config/git/personal.gitconfig";
+        # NOTE: not checked into git; contains secrets
+        path = "~/.config/git/personal";
       };
       core = {
         editor = "nvim";
@@ -28,8 +30,16 @@
       pull = {
         rebase = true;
       };
+      alias = {
+        undo = "reset --soft HEAD~1";
+        reword = "commit --amend --only";
+        amend = "commit --amend --no-edit";
+      };
       color = {
         ui = "auto";
+      };
+      rerere = {
+        enabled = true;
       };
     };
   };

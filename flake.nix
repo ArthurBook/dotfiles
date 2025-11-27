@@ -15,7 +15,6 @@
 
         modules = [
           ./nix/home/common.nix
-          # ./nix/home/darwin.nix
           ./nix/hosts/macbook-arthur.nix
         ];
       };
