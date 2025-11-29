@@ -19,5 +19,14 @@ Setup env:
 DOTFILES_LOC=~/projects/dotfiles
 git clone git@github.com:ArthurBook/dotfiles.git ${DOTFILES_LOC}
 cd ${DOTFILES_LOC}
-nix run home-manager/master -- switch --flake .#macos
+
+# Single command setup (includes both system and home configuration)
+sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .
 ```
+
+After initial setup, use this single command to rebuild everything:
+```bash
+sudo nix run nix-darwin#darwin-rebuild -- switch --flake .
+```
+
+> **Note:** This configures both system-level (nix-darwin) and user-level (home-manager) settings in one command.

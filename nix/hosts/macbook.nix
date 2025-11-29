@@ -46,13 +46,4 @@
     palette = 15=#c0caf5
   '';
 
-  # Tailscale auto-start (macOS specific)
-  launchd.agents.tailscale = {
-    enable = true;
-    config = {
-      ProgramArguments = [ "/usr/bin/open" "-a" "Tailscale" ];
-      RunAtLoad = true;
-      KeepAlive = false;
-    };
-  };
 }
