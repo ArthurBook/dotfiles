@@ -14,6 +14,15 @@
     ripgrep # Recursively searches directories
     uv # Fast Python package and project manager
 
+    # Secret management
+    sops # Secret operations tool for encrypting files
+    age # Modern encryption tool for SOPS
+    ssh-to-age # Convert SSH keys to age keys
+    pre-commit # Git hooks management
+
+    # Network tools
+    tailscale # Zero config VPN for building secure networks
+
     # Nerd Fonts
     nerd-fonts.hack
   ];
@@ -22,8 +31,9 @@
     enable = true;
     config = {
       theme = "tokyonight";
-      style = "numbers,changes,header";
-      pager = "less -FR";
+      style = "grid,header,numbers";
+      pager = "less -RK";
+      paging = "always";
     };
     themes = {
       tokyonight = {

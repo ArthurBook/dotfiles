@@ -4,6 +4,7 @@
   imports = [
     ./git.nix
     ./packages.nix
+    ./secrets.nix
     ./editor/neovim.nix
     ./editor/tools.nix
     ./shell/fish.nix
@@ -25,4 +26,3 @@
 
   home.stateVersion = "25.05";
 }
-
