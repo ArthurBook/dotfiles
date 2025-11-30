@@ -3,7 +3,7 @@
 {
   imports = [
     ./git.nix
-    ./packages.nix
+    ./packages
     ./secrets.nix
     ./editor/neovim.nix
     ./editor/tools.nix

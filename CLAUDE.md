@@ -42,7 +42,12 @@ dotfiles/
 │   ├── system/darwin.nix        # nix-darwin system-level configuration
 │   ├── home/                    # home-manager user-level configurations
 │   │   ├── common.nix          # Main home-manager entry point
-│   │   ├── packages.nix        # User packages and CLI tools
+│   │   ├── packages/           # Package configurations
+│   │   │   ├── default.nix     # Simple packages without config
+│   │   │   ├── bat.nix         # Bat (cat replacement) with Tokyo Night theme
+│   │   │   ├── bottom.nix      # System monitor with custom config
+│   │   │   ├── direnv.nix      # Environment manager with Python support
+│   │   │   └── eza.nix         # Modern ls with Tokyo Night theme
 │   │   ├── secrets.nix         # SOPS secret management
 │   │   ├── git.nix            # Git configuration
 │   │   ├── editor/            # Editor configurations
@@ -166,10 +171,10 @@ nix build .#homeConfigurations.macos.activationPackage
    - Central import point for all home-manager modules
    - Enables font installation and sets home state version
 
-4. **`/Users/arthurbook/projects/dotfiles/nix/home/packages.nix`**
-   - Comprehensive CLI toolkit: bottom, dust, eza, fd, ripgrep, uv
-   - Tokyo Night theming for bat, eza, bottom
-   - Direnv configuration with uv Python environment support
+4. **`/Users/arthurbook/projects/dotfiles/nix/home/packages/`**
+   - `default.nix`: Simple packages without configuration (dust, fd, ripgrep, uv, etc.)
+   - Individual files for packages with configuration (bat.nix, bottom.nix, direnv.nix, eza.nix)
+   - Tokyo Night theming consistently applied across configured tools
 
 5. **`/Users/arthurbook/projects/dotfiles/nix/home/secrets.nix`**
    - SOPS configuration pointing to age keys and secrets.yaml
@@ -192,7 +197,8 @@ nix build .#homeConfigurations.macos.activationPackage
 ## Common Modification Patterns
 
 ### Adding New Packages
-Add to `/Users/arthurbook/projects/dotfiles/nix/home/packages.nix` in the `home.packages` list.
+- **Simple packages**: Add to `/Users/arthurbook/projects/dotfiles/nix/home/packages/default.nix` in the `home.packages` list
+- **Packages with configuration**: Create a new file `/Users/arthurbook/projects/dotfiles/nix/home/packages/[package-name].nix` and import it in `default.nix`
 
 ### Adding New Applications
 Create a new module in `/Users/arthurbook/projects/dotfiles/nix/home/` and import it in `common.nix`.
