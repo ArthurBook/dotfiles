@@ -71,7 +71,7 @@ This repository uses a **dual configuration approach**:
 
 1. **nix-darwin** (`darwinConfigurations."workbook"`) - System-level configuration
    - Managed in `/nix/system/darwin.nix`
-   - Handles system packages (tailscale, mosh), services, and system settings
+   - Handles system packages (tailscale, mosh, docker, docker-compose), services, and system settings
    - Enables experimental Nix features and configures the Nix daemon
 
 2. **home-manager** (`homeConfigurations."macos"`) - User-level configuration
@@ -163,7 +163,7 @@ nix build .#homeConfigurations.macos.activationPackage
    - Uses nixpkgs-25.05-darwin and release-25.05 branches
 
 2. **`/Users/arthurbook/projects/dotfiles/nix/system/darwin.nix`**
-   - System-level packages: tailscale, mosh
+   - System-level packages: tailscale, mosh, docker, docker-compose
    - Enables experimental features and configures Nix daemon
    - Configures system services (tailscale daemon)
 
