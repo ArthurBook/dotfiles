@@ -8,6 +8,8 @@
   environment.systemPackages = with pkgs; [
     tailscale
     mosh
+    docker
+    docker-compose
   ];
 
   # Enable tailscaled as a launchd daemon
