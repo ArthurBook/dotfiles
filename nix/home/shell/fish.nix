@@ -1,8 +1,17 @@
 { config, pkgs, ... }:
 
+let
+  nixPackage = pkgs.nix;
+in
 {
   programs.fish = {
     enable = true;
+    loginShellInit = ''
+      # Initialize Nix (multi-user daemon) in fish
+      if test -e "${nixPackage}/etc/profile.d/nix-daemon.fish"
+        source "${nixPackage}/etc/profile.d/nix-daemon.fish"
+      end
+    '';
     interactiveShellInit = ''
       set -gx PATH $HOME/.local/bin $PATH
       starship init fish | source
@@ -36,5 +45,4 @@
       fish_greeting = "";
     };
   };
-
 }
