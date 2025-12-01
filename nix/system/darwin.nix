@@ -10,6 +10,8 @@
     mosh
     docker
     docker-compose
+    mutagen
+    mutagen-compose
   ];
 
   # Enable tailscaled as a launchd daemon
