@@ -1,12 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 
 {
   imports = [
     ../home/common.nix
   ];
 
-  home.username = "arthurbook";
-  home.homeDirectory = "/Users/arthurbook";
+  home.username = username;
+  home.homeDirectory = "/Users/${username}";
 
   home.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
