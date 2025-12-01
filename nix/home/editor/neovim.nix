@@ -45,6 +45,14 @@
         vim.opt.tabstop = 2
         vim.opt.clipboard = "unnamedplus"
 
+        -- Set filetype for .envrc files (direnv)
+        vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+          pattern = ".envrc",
+          callback = function()
+            vim.bo.filetype = "bash"
+          end,
+        })
+
         -- Set colorscheme first
         vim.cmd.colorscheme("tokyonight")
 
