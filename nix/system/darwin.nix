@@ -59,6 +59,7 @@
       "rectangle"
       "slack"
       "whatsapp"
+      "zoom"
     ];
 
     taps = [
