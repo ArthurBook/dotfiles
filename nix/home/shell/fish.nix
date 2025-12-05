@@ -40,6 +40,8 @@ in
       nv = "nvim";
       cc = "claude";
       da = "direnv allow";
+      lg = "lazygit";
+      ld = "lazydocker";
     };
     functions = {
       fish_greeting = "";

@@ -6,6 +6,7 @@
     ./bottom.nix
     ./direnv.nix
     ./eza.nix
+    ./lazydocker.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
