@@ -9,7 +9,7 @@
   # Global direnv helper functions
   home.file.".config/direnv/direnvrc".text = ''
     # Helper function for uv virtual environments
-    use_python_venv() {
+    source_python_venv() {
       local venv_dir="''${1:-.venv}"
 
       if [ ! -d "$venv_dir" ]; then
