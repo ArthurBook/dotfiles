@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     tailscale
     mosh
+    mutagen
   ];
 
   # Enable tailscaled as a launchd daemon
@@ -46,6 +47,7 @@
       cleanup = "zap";
       upgrade = true;
     };
+
 
     casks = [
       "cursor"
