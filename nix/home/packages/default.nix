@@ -19,6 +19,7 @@
     fd # The friendly file finder
     procs # Modern ps replacement
     ripgrep # Recursively searches directories
+    s5cmd # Fast S3/cloud storage command line tool
     uv # Fast Python package and project manager
 
     # Secret management
