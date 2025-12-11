@@ -24,6 +24,11 @@ cd ${DOTFILES_LOC}
 sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch --flake .
 ```
 
+Setup home manager:
+```bash
+nix run github:nix-community/home-manager/release-25.05 -- switch --flake .#macos
+```
+
 After initial setup, use this single command to rebuild everything:
 ```bash
 sudo nix run nix-darwin#darwin-rebuild -- switch --flake .
