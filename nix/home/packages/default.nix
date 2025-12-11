@@ -18,6 +18,7 @@
     dust # Modern replacement for du with better visualization
     fd # The friendly file finder
     procs # Modern ps replacement
+    rclone # Command line program for cloud storage
     ripgrep # Recursively searches directories
     s5cmd # Fast S3/cloud storage command line tool
     uv # Fast Python package and project manager
