@@ -42,6 +42,7 @@ in
       da = "direnv allow";
       lg = "lazygit";
       ld = "lazydocker";
+      netmon = "zellij --layout network-monitor";
     };
     functions = {
       fish_greeting = "";

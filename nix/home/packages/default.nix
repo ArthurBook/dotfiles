@@ -23,6 +23,10 @@
     s5cmd # Fast S3/cloud storage command line tool
     uv # Fast Python package and project manager
 
+    # Network monitoring tools
+    bandwhich # Per-process network usage monitor
+    bmon # Network bandwidth monitor
+
     # Secret management
     sops # Secret operations tool for encrypting files
     age # Modern encryption tool for SOPS

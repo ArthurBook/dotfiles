@@ -25,4 +25,25 @@
       }
     }
   '';
+
+  home.file.".config/zellij/layouts/network-monitor.kdl".text = ''
+    layout {
+      tab name="network-monitor" focus=true {
+        pane size=2 borderless=true {
+          plugin location="tab-bar"
+        }
+        pane split_direction="horizontal" {
+          pane command="bmon" start_suspended=false {
+            args "-U" "-p" "en0"
+          }
+          pane command="sudo" start_suspended=false {
+            args "bandwhich" "--show-dns" "--no-resolve" "--unit-family" "si-bits"
+          }
+        }
+        pane size=1 borderless=true {
+          plugin location="status-bar"
+        }
+      }
+    }
+  '';
 }
