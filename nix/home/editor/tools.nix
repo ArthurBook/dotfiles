@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     claude-code # Agentic coding tool that lives in your terminal
+    gemini-cli # Agentic coding tool that lives in your terminal
+    codex # Agentic coding tool that lives in your terminal
     lazygit # A simple terminal UI for git commands
     pyright # Python LSP
   ];
