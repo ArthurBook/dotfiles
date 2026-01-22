@@ -1,12 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgsUnstable, ... }:
 
 {
   home.packages = with pkgs; [
-    claude-code # Agentic coding tool that lives in your terminal
-    gemini-cli # Agentic coding tool that lives in your terminal
-    codex # Agentic coding tool that lives in your terminal
-    lazygit # A simple terminal UI for git commands
-    pyright # Python LSP
+    pkgsUnstable.claude-code # Agentic coding tool that lives in your terminal
+    pkgsUnstable.gemini-cli # Agentic coding tool that lives in your terminal
+    pkgsUnstable.codex # Agentic coding tool that lives in your terminal
+    pkgs.lazygit # A simple terminal UI for git commands
+    pkgs.pyright # Python LSP
   ];
 
   # Lazygit configuration
