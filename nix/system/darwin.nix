@@ -58,6 +58,7 @@
       "google-drive"
       "granola"
       "obsidian"
+      "raycast"
       "rectangle"
       "slack"
       "whatsapp"
