@@ -25,12 +25,12 @@
   outputs = { nixpkgs, nix-darwin, home-manager, sops-nix, nix-homebrew, ... }:
     let
       # Configuration variables
-      username = "arthurbook";
+      username = "arthur";
       system = "aarch64-darwin";
     in
     {
       # nix-darwin system configuration (system-level only)
-      darwinConfigurations."workbook" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."blackbook" = nix-darwin.lib.darwinSystem {
         inherit system;
         specialArgs = { inherit username; };
         modules = [
