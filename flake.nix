@@ -38,7 +38,8 @@
     , ...
     }:
     let
-      username = "arthurbook";
+      # Configuration variables
+      username = "arthur";
       system = "aarch64-darwin";
 
       pkgs = import nixpkgs { inherit system; };
@@ -50,7 +51,8 @@
       };
     in
     {
-      darwinConfigurations."workbook" = nix-darwin.lib.darwinSystem {
+      # nix-darwin system configuration (system-level only)
+      darwinConfigurations."blackbook" = nix-darwin.lib.darwinSystem {
         inherit system;
 
         specialArgs = {
