@@ -50,6 +50,7 @@
 
 
     casks = [
+      "antigravity"
       "cursor"
       "discord"
       "docker-desktop"
@@ -57,6 +58,7 @@
       "google-chrome"
       "google-drive"
       "granola"
+      "nordvpn"
       "obsidian"
       "raycast"
       "rectangle"

@@ -22,6 +22,7 @@
     ripgrep # Recursively searches directories
     s5cmd # Fast S3/cloud storage command line tool
     uv # Fast Python package and project manager
+    nodejs # JavaScript runtime and package manager (npm)
 
     # Network monitoring tools
     bandwhich # Per-process network usage monitor
