@@ -51,6 +51,7 @@
 
     casks = [
       "antigravity"
+      "claude"
       "cursor"
       "discord"
       "docker-desktop"
