@@ -12,6 +12,10 @@
     XDG_CONFIG_HOME = "$HOME/.config";
   };
 
+  home.sessionPath = [
+    "/Applications/Obsidian.app/Contents/MacOS"
+  ];
+
   # Ghostty terminal configuration
   home.file.".config/ghostty/config".text = ''
     font-family = "Hack Nerd Font Mono"
