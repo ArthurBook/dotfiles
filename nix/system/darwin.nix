@@ -51,6 +51,7 @@
 
     casks = [
       "antigravity"
+      "chatgpt"
       "claude"
       "cursor"
       "discord"
